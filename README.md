@@ -23,7 +23,7 @@ swift test
 ### Creator
 
 [Ryan Grier](http://github.com/rwgrier)  
-Mastodon: [@rwgrier](https://mastodon.social/@rwgrier)
+Mastodon: [@rwgrier](https://mastodon.social/@rwgrier)  
 Bluesky: [@rwgrier](https://bsky.app/profile/rwgrier.bsky.social)
 
 ## License
