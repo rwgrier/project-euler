@@ -6,10 +6,16 @@
 struct Problem001 {
 
     func sum(of multiples: [Int], max: Int) -> Int {
-        (0..<max)
-            .filter { number in
-                multiples.first(where: { number.isMultiple(of: $0) }) != nil
+        var sum: Int = 0
+
+        for count in 1..<max {
+            for multiple in multiples {
+                guard count % multiple == 0 else { continue }
+                sum += count
+                break
             }
-            .reduce(0, +)
+        }
+
+         return sum
     }
 }
