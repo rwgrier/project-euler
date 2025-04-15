@@ -5,15 +5,15 @@
 /// > Find the sum of all the multiples of 3 or 5 below 1000.
 struct Problem001 {
 
-    func sum(of multiples: [Int], max: Int) -> Int {
+    /// Returns the sum of all multiples of 3 or 5 below `max`
+    /// - Parameter max: The max natural number to determine the sum for.
+    /// - Returns: The sum of all the multiples of 3 or 5 below `max`. 
+    func sumOfMultiples3And5(max: Int) -> Int {
         var sum: Int = 0
 
         for count in 1..<max {
-            for multiple in multiples {
-                guard count % multiple == 0 else { continue }
-                sum += count
-                break
-            }
+            guard count % 3 == 0 || count % 5 == 0 else { continue }
+            sum += count
         }
 
          return sum
