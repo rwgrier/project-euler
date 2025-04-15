@@ -9,13 +9,8 @@ struct Problem001 {
     /// - Parameter max: The max natural number to determine the sum for.
     /// - Returns: The sum of all the multiples of 3 or 5 below `max`. 
     func sumOfMultiples3And5(max: Int) -> Int {
-        var sum: Int = 0
-
-        for count in 1..<max {
-            guard count % 3 == 0 || count % 5 == 0 else { continue }
-            sum += count
-        }
-
-         return sum
+        (1..<max)
+            .filter { $0 % 3 == 0 || $0 % 5 == 0 }
+            .reduce(0, +)
     }
 }
