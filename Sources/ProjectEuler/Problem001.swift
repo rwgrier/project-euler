@@ -9,8 +9,16 @@ struct Problem001 {
     /// - Parameter max: The max natural number to determine the sum for.
     /// - Returns: The sum of all the multiples of 3 or 5 below `max`. 
     func sumOfMultiples3And5(max: Int) -> Int {
-        (1..<max)
-            .filter { $0 % 3 == 0 || $0 % 5 == 0 }
-            .reduce(0, +)
+        let three = sumOfMultiplesUsingAP(multiple: 3, max: max)
+        let five = sumOfMultiplesUsingAP(multiple: 5, max: max)
+        let fifteen = sumOfMultiplesUsingAP(multiple: 15, max: max)
+
+        return (three + five) - fifteen
+    }
+
+    // Using Arithmetic Progression
+    private func sumOfMultiplesUsingAP(multiple: Int, max: Int) -> Int {
+        let numberOfMultiples = (max - 1) / multiple
+        return multiple * numberOfMultiples * (numberOfMultiples + 1) / 2
     }
 }
