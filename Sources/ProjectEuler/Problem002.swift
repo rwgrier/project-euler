@@ -16,7 +16,7 @@ struct Problem002 {
 
     private func generateFibonacciNumbersUpTo(_ max: Int) -> [Int] {
         let generator = FibonacciGenerator()
-        var numbers: [Int: Int] = [:]
+        var numbers: [Int] = []
         var index: Int = 0
         var fibonacci = 1
 
@@ -25,9 +25,9 @@ struct Problem002 {
             fibonacci = generator.fibonacci(at: index)
 
             guard fibonacci <= max else { break }
-            numbers[index] = fibonacci
+            numbers.append(fibonacci)
         }
 
-        return numbers.values.sorted()
+        return numbers
     }
 }
